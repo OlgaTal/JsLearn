@@ -1,0 +1,23 @@
+extends ../shared/template
+
+block title
+  h1 New Alien page
+
+block content
+  h2 Create a New Allien
+    i.fa.fa-qq(aria-hidden='true').fa-2x
+  .row
+    .col-xs-6
+      form(action='/aliens', method='post')
+        .form-group
+          label Name
+          input.form-control(type='text', name= 'name')
+        .form-group
+          label Photo
+          input.form-control(type='text', name= 'photo')
+        .form-group
+          label Planet
+          input.form-control(type='text', name= 'planet')
+        .form-group
+          button.btn.btn-primary(type='submit') Save
+    .col-xs-6

@@ -1,0 +1,10 @@
+{
+  "apps" : [{
+    "name"          : "app",
+    "script"        : "./run.sh",
+    "watch"         : true,
+    "ignore_watch"  : ["coverage", "dst", "logs", "node_modules", "static", "test"],
+    "watch_options" : {},
+    "restart_delay" : 7000
+  }]
+}

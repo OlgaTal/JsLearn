@@ -1,0 +1,33 @@
+.board{
+  border: 1px solid #e3e3e3;
+  background-color: #f5f5f5;
+}
+
+.boardrow{
+}
+
+.open{
+  height: 50px;
+  width: 12.5%;
+  background-color: #99A3A4;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+.closed{
+  height: 50px;
+  width: 12.5%;
+  background-color: #424949;
+  display: inline-block;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+.active{
+  background-color: #EC7063;
+}
+
+.king{
+  background-color: #58D68D;
+}

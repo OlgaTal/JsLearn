@@ -1,0 +1,43 @@
+extends ../shared/template
+block content
+  .jumbotron
+    .row
+      .col-xs-10
+        h1= person.name
+      .col-xs-2
+        img.thumbnail.img-responsive.table-photo(src=person.photo)
+
+  table.table.table-striped
+    thead
+      tr
+        th Age
+        th Gender
+        th Money
+        th Travel
+    tbody
+      tr
+        td= person.age
+        td= person.gender
+        td= '$' + person.money
+        td
+          each city in person.cities
+            a.inner-link(href='/cities/' + city._id)= city.name
+
+  h1 Purchase Travel
+  .row
+    .col-xs-4
+      form(action='/people/' + person._id + '/purchase', method='post')
+        .form-group
+          select.form-control#country(name='country')
+            option Select a Country
+            each c in countries
+              option(value=c._id.toString())= c.name
+        .form-group
+          select.form-control#city(name='city')
+            option Select a City
+        .form-group
+          button.btn.btn-success(type='submit'): i.fa.fa-bitcoin
+    .col-xs-8
+
+block scripts
+  script(src='/purchase.js')

@@ -1,0 +1,16 @@
+extends ../shared/template
+block content
+  h1 New Country
+
+  .row
+    .col-xs-6
+      form(action='/countries', method='post')
+        .form-group
+          label Name
+          input.form-control(type='text', name='name', placeholder='Name')
+        .form-group
+          label Photo
+          input.form-control(type='text', name='photo', placeholder='Photo')
+        .form-group
+        button.btn.btn-success(type='submit'): i.fa.fa-thumbs-up
+    .col-xs-6

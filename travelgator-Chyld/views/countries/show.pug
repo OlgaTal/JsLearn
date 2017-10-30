@@ -1,0 +1,14 @@
+extends ../shared/template
+block content
+  .jumbotron
+    .row
+      .col-xs-10
+        h1= country.name
+      .col-xs-2
+        img.thumbnail.img-responsive.table-photo(src=country.photos[0])
+
+  h1 Cities
+  #cities
+    each city in country.cities
+      a(href='/cities/' + city._id)
+        .city(style='background-image:url(' + city.photos[0] + ')')

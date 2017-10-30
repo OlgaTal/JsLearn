@@ -1,0 +1,24 @@
+extends ../shared/template
+block content
+  h1 New City
+
+  .row
+    .col-xs-6
+      form(action='/cities', method='post')
+        .form-group
+          label Name
+          input.form-control(type='text', name='name', placeholder='Name')
+        .form-group
+          label Photo
+          input.form-control(type='text', name='photo', placeholder='Photo')
+        .form-group
+          label Amount
+          input.form-control(type='text', name='amount', placeholder='Amount')
+        .form-group
+          label Country
+          select.form-control(name='country')
+            each c in countries
+              option(value=c._id.toString())= c.name
+        .form-group
+        button.btn.btn-success(type='submit'): i.fa.fa-thumbs-up
+    .col-xs-6

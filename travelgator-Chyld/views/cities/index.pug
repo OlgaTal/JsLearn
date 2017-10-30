@@ -1,0 +1,22 @@
+extends ../shared/template
+block content
+  h1 Cities
+  div
+    a.btn.btn-primary(href='/cities/new')
+      i.fa.fa-plus
+
+  .row
+    .col-xs-6
+      table.table.table-striped
+        thead
+          tr
+            th Show
+            th Name
+            th Photo
+        tbody
+          each city in cities
+            tr
+              td: a.btn.btn-warning.btn-xs(href='/cities/' + city._id): i.fa.fa-cog
+              td= city.name
+              td: img.thumbnail.img-responsive.table-photo(src=city.photos[0])
+    .col-xs-6

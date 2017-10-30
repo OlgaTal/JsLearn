@@ -1,0 +1,17 @@
+doctype html
+html(lang='en')
+  head
+    title Tip Calculator
+    link(href='/style.css', rel='stylesheet')
+  body(style='background-color: + color')
+    h1 Tip Calculator
+    form(action='/tipcalculator', method='post')
+      input(type='amount', name='amt', value=amt)
+      select(name="tip")
+        - var repeation = ['-- Select Tip --', '5', '10', '15', '20']
+        for item in repeation
+          option(value=item selected=tip == item) #{item}% 
+
+      button(type='submit') Compute Tip
+
+      span= tipAmt

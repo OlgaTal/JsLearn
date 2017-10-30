@@ -1,0 +1,29 @@
+extends ../shared/template
+block content
+  if task
+    h1 Edit
+  else
+    h1 New
+
+  .row
+      .col-xs-6
+        form(action= task ? '/tasks/' + task.id : '/tasks', method='post')
+          .form-group
+            label Name
+            input.form-control(type='text', name='name', value=task && task.name)
+          .form-group
+            label Due
+            input.form-control(type='date', name='due', value=task && task.due)
+          .form-group
+            label Priority
+            select.form-control(name='priority')
+              each priority in priorities
+                option(value=priority.value, selected=task && (priority.value === task.priority.value))= priority.name
+          .form-group
+            label Category
+            select.form-control(name='category')
+              each category in categories
+                option(selected=task && (category.name === task.category))= category.name
+          .form-group
+            button.btn.btn-primary(type='submit')= task ? 'Update' : 'Create'
+      .col-xs-6

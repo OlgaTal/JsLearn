@@ -1,0 +1,47 @@
+extends ../shared/template
+block content
+  .jumbotron
+    .row
+      .col-xs-10
+        h1= city.name
+      .col-xs-2
+        img.thumbnail.img-responsive.table-photo(src=city.photos[0])
+
+  .panel.panel-success
+    .panel-heading
+      .panel-title Balance
+    .panel-body $#{city.balance}
+
+  .panel.panel-warning
+    .panel-heading
+      .panel-title Weather
+    .panel-body #{weather.main.temp} degrees, #{weather.main.humidity}% humidity, #{weather.weather[0].description}
+
+  h1 Country
+  div
+    a(href='/countries/' + city.country._id)
+      .country(style='background-image:url(' + city.country.photos[0] + ')')
+
+  h1 People
+  #people
+    each person in city.people
+      a(href='/people/' + person._id)
+        .person(style='background-image:url(' + person.photo + ')')
+
+  h1 Yelp
+  table.table.table-striped
+    thead
+      tr
+        th Name
+        th Description
+        th Phone
+        th Rating
+        th
+    tbody
+      each b in food.businesses
+        tr
+          td: a(href=b.url)= b.name
+          td= b.snippet_text
+          td= b.phone
+          td= b.rating
+          td: img.thumbnail(src= b.image_url)

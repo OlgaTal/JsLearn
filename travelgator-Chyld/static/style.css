@@ -1,0 +1,19 @@
+.table-photo{
+  height: 100px;
+}
+
+.inner-link{
+  margin: 0px 10px 0px 10px;
+  padding: 3px 7px 3px 7px;
+  border: 1px dashed #aaaaaa;
+  background-color: #FFDC00;
+}
+
+.city, .person, .country{
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  margin-right: 25px;
+  border: 1px solid #555555;
+}

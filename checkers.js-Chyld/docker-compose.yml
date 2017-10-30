@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  app:
+    image: chyld/nexgen:1.0.1
+    restart: always
+    volumes:
+      - "./app:/usr/src/app"
+    ports:
+      - "3333:3333"
+      - "5858:5858"
+    environment:
+      - DBNAME=checkers-dev-db
+
+  db:
+    image: mongo
+    volumes:
+      - "./data:/data/db"
+    ports:
+      - "27017:27017"

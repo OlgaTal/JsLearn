@@ -1,0 +1,22 @@
+extends ../shared/template
+block content
+  h1 Countries
+  div
+    a.btn.btn-primary(href='/countries/new')
+      i.fa.fa-plus
+
+  .row
+    .col-xs-6
+      table.table.table-striped
+        thead
+          tr
+            th Show
+            th Name
+            th Photo
+        tbody
+          each country in countries
+            tr
+              td: a.btn.btn-warning.btn-xs(href='/countries/' + country._id): i.fa.fa-cog
+              td= country.name
+              td: img.thumbnail.img-responsive.table-photo(src=country.photos[0])
+    .col-xs-6

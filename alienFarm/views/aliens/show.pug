@@ -1,0 +1,13 @@
+extends ../shared/template
+
+block title
+  h1 Our awesome Show Alien page
+
+block content
+  h2= 'Welcome ' + alien.name + '!'
+  div Name&nbsp;
+    strong= alien.name
+  div Photo
+    img.img-responsive.thumbnail.alienshow(src=alien.photo)
+  div Planet
+    img.img-responsive.thumbnail.alienshow(src=alien.planet)

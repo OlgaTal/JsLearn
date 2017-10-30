@@ -1,0 +1,22 @@
+extends ../shared/template
+block content
+  h1 People
+  div
+    a.btn.btn-primary(href='/people/new')
+      i.fa.fa-plus
+
+  .row
+    .col-xs-6
+      table.table.table-striped
+        thead
+          tr
+            th Show
+            th Name
+            th Photo
+        tbody
+          each person in people
+            tr
+              td: a.btn.btn-warning.btn-xs(href='/people/' + person._id): i.fa.fa-cog
+              td= person.name
+              td: img.thumbnail.img-responsive.table-photo(src=person.photo)
+    .col-xs-6
